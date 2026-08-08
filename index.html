@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página institucional oficial do ecossistema O Livro (olivro.shop). Conhecimento que transforma. Leia, estude, descubra e compartilhe. Porta de entrada para a aplicação A Bíblia (/biblia/) e acervos literários.">
+  <meta name="theme-color" content="#1E3A5F">
+  
+  <!-- PWA & Favicons -->
+  <link rel="manifest" href="/manifest.json">
+  <link rel="canonical" href="https://olivro.shop/">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon/favicon-512x512.png">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://olivro.shop/">
+  <meta property="og:title" content="O Livro — Conhecimento que transforma">
+  <meta property="og:description" content="Página institucional oficial do ecossistema O Livro (olivro.shop). Conhecimento que transforma. Leia, estude, descubra e compartilhe.">
+  <meta property="og:image" content="https://olivro.shop/favicon/favicon-512x512.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://olivro.shop/">
+  <meta property="twitter:title" content="O Livro — Conhecimento que transforma">
+  <meta property="twitter:description" content="Página institucional oficial do ecossistema O Livro (olivro.shop). Conhecimento que transforma. Leia, estude, descubra e compartilhe.">
+  <meta property="twitter:image" content="https://olivro.shop/favicon/favicon-512x512.png">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "O Livro",
+    "url": "https://olivro.shop/",
+    "description": "Portal institucional e ecossistema de conhecimento dedicado ao estudo bíblico e literário.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://olivro.shop/biblia/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <title>O Livro — Conhecimento que transforma</title>
+
+  <!-- Estilo CSS Puro -->
+  <link rel="stylesheet" href="/src/css/style.css">
+
+</head>
+<body>
+
+  <!-- Link de Acessibilidade para Navegação por Teclado -->
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- =========================================================================
+       CABEÇALHO E NAVEGAÇÃO
+       ========================================================================= -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      
+      <!-- Marca / Logo -->
+      <a href="#header" class="brand-logo" aria-label="O Livro — Ir para o topo da página">
+        <svg class="brand-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M16 4L4 8V24L16 28L28 24V8L16 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 4V28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M8 12C11 11 14 12 16 13C18 12 21 11 24 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M8 17C11 16 14 17 16 18C18 17 21 16 24 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-text">O Livro</span>
+        <span class="brand-tag">olivro.shop</span>
+      </a>
+
+      <!-- Navegação Principal -->
+      <nav class="main-nav" id="main-nav" aria-label="Navegação Principal">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link">Início</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#biblia" class="nav-link">A Bíblia</a></li>
+          <li><a href="#manifesto" class="nav-link">Manifesto</a></li>
+          <li><a href="#pesquisa" class="nav-link">Pesquisa</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+        <a href="https://bibliacrista.ai.studio" target="_blank" rel="noopener noreferrer" class="nav-cta-btn" aria-label="Acessar a aplicação A Bíblia (abre em nova aba)">
+          <span>Acessar A Bíblia</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </nav>
+
+      <!-- Botão Menu Mobile -->
+      <button class="mobile-toggle-btn" id="mobile-toggle-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu de navegação">
+        <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <svg class="close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: none;">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       CONTEÚDO PRINCIPAL
+       ========================================================================= -->
+  <main id="main-content">
+
+    <!-- 1. HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="hero-badge-dot" aria-hidden="true"></span>
+            <span>Conhecimento que transforma.</span>
+          </div>
+
+          <h1 class="hero-title">O Livro</h1>
+          <p class="hero-subtitle">Leia. Estude. Descubra. Compartilhe.</p>
+
+          <p class="hero-description">
+            O Livro (<strong>olivro.shop</strong>) é uma iniciativa institucional dedicada ao fomento da leitura, preservação do patrimônio literário e estudo aprofundado das Sagradas Escrituras e clássicos universais. Somos o ponto de partida para a descoberta e o aprendizado contínuo.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://bibliacrista.ai.studio" target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="Acessar a aplicação A Bíblia (abre em nova aba)">
+              <span>Ler a Bíblia</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#sobre" class="btn-secondary">Conhecer o Projeto</a>
+          </div>
+        </div>
+
+        <!-- Ilustração Editorial / Iluminura em SVG -->
+        <div class="hero-graphic-card">
+          <svg class="hero-svg-illustration" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustração editorial de um livro aberto com detalhes dourados">
+            <!-- Moldura Externa -->
+            <rect x="10" y="10" width="180" height="140" rx="8" stroke="#1E3A5F" stroke-width="1.5" stroke-dasharray="4 2"/>
+            <!-- Capa e Páginas -->
+            <path d="M100 30V130M100 30C80 25 35 25 25 35V125C35 118 80 118 100 130M100 30C120 25 165 25 175 35V125C165 118 120 118 100 130" stroke="#0F2744" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Linhas de Texto Elegantes -->
+            <line x1="35" y1="50" x2="85" y2="50" stroke="#C9A961" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="35" y1="65" x2="80" y2="65" stroke="#737373" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="35" y1="80" x2="85" y2="80" stroke="#737373" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="35" y1="95" x2="70" y2="95" stroke="#737373" stroke-width="1.5" stroke-linecap="round"/>
+
+            <line x1="115" y1="50" x2="165" y2="50" stroke="#C9A961" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="115" y1="65" x2="160" y2="65" stroke="#737373" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="115" y1="80" x2="165" y2="80" stroke="#737373" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="115" y1="95" x2="145" y2="95" stroke="#737373" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Marcador de Página Dourado -->
+            <path d="M100 30V90L106 84L112 90V30" fill="#C9A961"/>
+          </svg>
+          <div class="hero-graphic-caption">Preservação & Estudo Contemplativo</div>
+          <div class="hero-graphic-sub">Ecossistema Digital | olivro.shop</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. ECOSSISTEMA SEÇÃO (#sobre) -->
+    <section class="section-padding" id="sobre">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-label">Plataformas & Iniciativas</span>
+          <h2 class="section-title">O Ecossistema O Livro</h2>
+          <p class="section-lead">
+            Iniciativas integradas projetadas para cultivar a serenidade da leitura, a precisão do estudo acadêmico e a preservação de acervos textuais.
+          </p>
+        </div>
+
+        <div class="ecosystem-grid">
+          
+          <!-- Card 1: Destaque A Bíblia -->
+          <article class="ecosystem-card highlight">
+            <div class="card-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                <line x1="12" y1="6" x2="12" y2="12"></line>
+                <line x1="9" y1="9" x2="15" y2="9"></line>
+              </svg>
+            </div>
+            <h3 class="card-title">A Bíblia (/biblia/)</h3>
+            <p class="card-text">
+              Aplicação web autônoma e especializada para leitura imersiva e estudo bíblico avançado. Oferece comparação de versões, navegação ágil por livros e capítulos, concordância temática e ambiente sem distrações.
+            </p>
+            <a href="https://bibliacrista.ai.studio" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="Acessar aplicação A Bíblia (abre em nova aba)">
+              <span>Acessar Aplicação</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </article>
+
+          <!-- Card 2: Acervo Digital -->
+          <article class="ecosystem-card">
+            <div class="card-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+            </div>
+            <h3 class="card-title">Acervo Digital</h3>
+            <p class="card-text">
+              Mapeamento, catalogação e digitalização de obras fundamentais da literatura clássica, textos teológicos históricos e ensaios acadêmicos para livre consulta.
+            </p>
+            <a href="#pesquisa" class="card-link">
+              <span>Explorar Acervo</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </article>
+
+          <!-- Card 3: Biblioteca de Estudos -->
+          <article class="ecosystem-card">
+            <div class="card-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </div>
+            <h3 class="card-title">Biblioteca de Pesquisa</h3>
+            <p class="card-text">
+              Recursos e ferramentas de referência cruzada para pesquisadores, estudantes e escritores, com índices temáticos, dicionários de contexto e mapas históricos.
+            </p>
+            <a href="#manifesto" class="card-link">
+              <span>Conhecer Diretrizes</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </article>
+
+          <!-- Card 4: Círculo de Leitura -->
+          <article class="ecosystem-card">
+            <div class="card-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3 class="card-title">Círculo de Leitura</h3>
+            <p class="card-text">
+              Comunidade de leitores dedicada ao intercâmbio de ideias, debates sobre grandes obras, boletins com recomendações e grupos de reflexão compartilhada.
+            </p>
+            <a href="#contato" class="card-link">
+              <span>Juntar-se ao Círculo</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. DESTAQUE DA BÍBLIA (#biblia) -->
+    <section class="biblia-banner-section" id="biblia">
+      <div class="container biblia-grid">
+        
+        <div>
+          <span class="biblia-badge">Aplicação Independente em /biblia/</span>
+          <h2 class="biblia-title">Uma Experiência de Leitura Sagrada e Focada</h2>
+          <p class="biblia-text">
+            A Bíblia é uma aplicação web autônoma mantida dentro do ecossistema O Livro. Desenvolvida para oferecer tipografia impecável, transição fluida entre passagens e recursos de pesquisa em um ambiente sereno.
+          </p>
+
+          <ul class="biblia-features-list">
+            <li class="biblia-feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Navegação instantânea por Testamento, Livro e Capítulo</span>
+            </li>
+            <li class="biblia-feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Modo focado sem distrações ou anúncios</span>
+            </li>
+            <li class="biblia-feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Comparação direta entre traduções consagradas</span>
+            </li>
+            <li class="biblia-feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Totalmente acessível para leitores de tela e navegação por teclado</span>
+            </li>
+          </ul>
+
+          <a href="https://bibliacrista.ai.studio" target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="Acessar a aplicação A Bíblia (abre em nova aba)">
+            <span>Abrir Aplicação A Bíblia</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Demonstração Visual da Aplicação A Bíblia -->
+        <div class="biblia-app-preview">
+          <div class="preview-verse-box">
+            “No princípio era o Verbo, e o Verbo estava com Deus, e o Verbo era Deus.”
+            <span class="preview-verse-ref">— João 1:1 (Exemplo de Leitura em A Bíblia)</span>
+          </div>
+
+          <div class="preview-status">
+            <span>Interface de Leitura Focada</span>
+            <span class="status-badge">Ativo em A Bíblia</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. MANIFESTO DO CONHECIMENTO (#manifesto) -->
+    <section class="section-padding manifesto-section" id="manifesto">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-label">Valores & Compromisso</span>
+          <h2 class="section-title">O Manifesto O Livro</h2>
+          <p class="section-lead">Acreditamos no poder transformador do texto fundamentado, da leitura reflexiva e do acesso livre ao conhecimento.</p>
+        </div>
+
+        <!-- Citação Destaque -->
+        <div class="quote-box">
+          <p class="quote-text">
+            “O conhecimento verdadeiro não se acumula em prateleiras fechadas; ele se multiplica quando compartilhado com rigor, serenidade e acessibilidade.”
+          </p>
+
+          <span class="quote-author">— Conselho Editorial O Livro</span>
+        </div>
+
+        <!-- 4 Pilares Institucionais -->
+        <div class="values-grid">
+          <article class="value-item">
+            <div class="value-num">01</div>
+            <h3 class="value-title">Preservação</h3>
+            <p class="value-desc">Salvaguarda e manutenção da integridade textual de grandes obras e manuscritos históricos.</p>
+          </article>
+
+          <article class="value-item">
+            <div class="value-num">02</div>
+            <h3 class="value-title">Acessibilidade</h3>
+            <p class="value-desc">Garantia de leitura inclusiva e universal, sem barreiras tecnológicas ou financeiras.</p>
+          </article>
+
+          <article class="value-item">
+            <div class="value-num">03</div>
+            <h3 class="value-title">Rigor</h3>
+            <p class="value-desc">Compromisso com o contexto histórico, precisão de fontes e isenção intelectual.</p>
+          </article>
+
+          <article class="value-item">
+            <div class="value-num">04</div>
+            <h3 class="value-title">Comunidade</h3>
+            <p class="value-desc">Incentivo ao diálogo respeitoso e à troca de descobertas entre leitores e estudiosos.</p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. EXPLORADOR DO ACERVO / PESQUISA (#pesquisa) -->
+    <section class="section-padding search-explore-section" id="pesquisa">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-label">Acervo e Pesquisa</span>
+          <h2 class="section-title">Explorar Áreas do Conhecimento</h2>
+          <p class="section-lead">Conheça os tópicos e coleções mantidos e catalogados pelo ecossistema O Livro.</p>
+        </div>
+
+        <!-- Filtro por Abas -->
+        <div class="filter-tabs" role="tablist" aria-label="Filtrar categorias do acervo">
+          <button class="tab-btn active" role="tab" aria-selected="true" data-category="all">Todos os Tópicos</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-category="biblia">Estudos Bíblicos</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-category="filosofia">Filosofia</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-category="literatura">Literatura Clássica</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-category="manuscritos">Manuscritos</button>
+        </div>
+
+        <!-- Grade do Acervo -->
+        <div class="catalog-grid">
+          
+          <article class="catalog-card" data-category="biblia">
+            <span class="catalog-category">Estudos Bíblicos</span>
+            <h3 class="catalog-title">Traduções e Manuscritos</h3>
+            <p class="catalog-snippet">Análise comparativa e história das edições do Códice Sinaítico ao Texto Recepto e versões contemporâneas.</p>
+            <button class="catalog-action-btn" data-open-modal data-modal-title="Traduções e Manuscritos Bíblicos" data-modal-content="<p>O ecossistema O Livro cataloga as principais famílias de manuscritos das Escrituras Sagradas, oferecendo notas explicativas sobre o contexto histórico e linguístico dos idiomas originais (hebraico, aramaico e grego koine).</p><p>Acesse a aplicação em <strong>/biblia/</strong> para leitura direta do texto bíblico.</p>">
+              <span>Saber mais</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </article>
+
+          <article class="catalog-card" data-category="filosofia">
+            <span class="catalog-category">Filosofia</span>
+            <h3 class="catalog-title">Ética e Sabedoria Antiga</h3>
+            <p class="catalog-snippet">Compilação de reflexões clássicas sobre a conduta humana, virtudes, justiça e a busca pela verdade.</p>
+            <button class="catalog-action-btn" data-open-modal data-modal-title="Ética e Sabedoria Antiga" data-modal-content="<p>Reunião de textos filosóficos e ensaios comentados que exploram o pensamento ético desde os filósofos pré-socráticos até o humanismo moderno.</p>">
+              <span>Saber mais</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </article>
+
+          <article class="catalog-card" data-category="literatura">
+            <span class="catalog-category">Literatura Clássica</span>
+            <h3 class="catalog-title">Obras Fundamentais</h3>
+            <p class="catalog-snippet">Guias de leitura e análises críticas dos grandes clássicos da literatura universal e poética tradicional.</p>
+            <button class="catalog-action-btn" data-open-modal data-modal-title="Obras Fundamentais do Ocidente" data-modal-content="<p>Guias de leitura elaborados para apoiar leitores na compreensão de grandes obras clássicas, destacando estrutura narrativa, estilo e relevância cultural.</p>">
+              <span>Saber mais</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </article>
+
+          <article class="catalog-card" data-category="manuscritos">
+            <span class="catalog-category">Manuscritos</span>
+            <h3 class="catalog-title">Papiros e Pergaminhos</h3>
+            <p class="catalog-snippet">Projetos de digitalização, paleografia e catalogação de achados arqueológicos e documentos antigos.</p>
+            <button class="catalog-action-btn" data-open-modal data-modal-title="Preservação de Papiros e Pergaminhos" data-modal-content="<p>Iniciativa focada no estudo de documentos antigos, métodos de conservação preventiva e transcrição paleográfica de códices históricos.</p>">
+              <span>Saber mais</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </article>
+
+          <article class="catalog-card" data-category="biblia">
+            <span class="catalog-category">Estudos Bíblicos</span>
+            <h3 class="catalog-title">Arqueologia & Geografia</h3>
+            <p class="catalog-snippet">Contextualização geográfica e histórica das terras bíblicas, cronologias e descobertas arqueológicas.</p>
+            <button class="catalog-action-btn" data-open-modal data-modal-title="Geografia e Arqueologia Bíblica" data-modal-content="<p>Mapas de época, cronologias detalhadas e estudos sobre as cidades e rotas históricas mencionadas no Antigo e Novo Testamento.</p>">
+              <span>Saber mais</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </article>
+
+          <article class="catalog-card" data-category="literatura">
+            <span class="catalog-category">Literatura Clássica</span>
+            <h3 class="catalog-title">A Arte da Leitura Atenta</h3>
+            <p class="catalog-snippet">Métodos de leitura sintópica, técnicas de anotação em margens e disciplina de estudos duradouros.</p>
+            <button class="catalog-action-btn" data-open-modal data-modal-title="A Arte da Leitura Atenta" data-modal-content="<p>Recomendações e ensaios sobre como cultivar o hábito da leitura reflexiva e o registro de ideias durante o estudo de textos densos.</p>">
+              <span>Saber mais</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </article>
+
+          <!-- Recursos Planejados (Em Breve - Não Clicáveis e Opacos) -->
+          <article class="catalog-card placeholder-card" data-category="manuscritos">
+            <span class="catalog-category">Manuscritos • Em Breve</span>
+            <h3 class="catalog-title">Códices Digitais Interativos</h3>
+            <p class="catalog-snippet">Visualizador paleográfico em alta definição de códices e papiros gregos para estudo avançado online.</p>
+            <span class="catalog-placeholder-badge">Desenvolvimento planejado</span>
+          </article>
+
+          <article class="catalog-card placeholder-card" data-category="filosofia">
+            <span class="catalog-category">Filosofia • Em Breve</span>
+            <h3 class="catalog-title">Seminários & Diálogos</h3>
+            <p class="catalog-snippet">Ciclos de palestras virtuais e fóruns moderados de discussão com acadêmicos sobre grandes ideias.</p>
+            <span class="catalog-placeholder-badge">Desenvolvimento planejado</span>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. CONTATO & CÍRCULO DE LEITURA (#contato) -->
+    <section class="section-padding contact-section" id="contato">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-label">Boas-Vindas ao Círculo</span>
+          <h2 class="section-title">Inscreva-se no Círculo de Leitura</h2>
+          <p class="section-lead">Receba atualizações do ecossistema O Livro, lançamentos de novos acervos e novidades sobre a aplicação A Bíblia.</p>
+        </div>
+
+        <div class="form-wrapper">
+          <form id="newsletter-form" novalidate>
+            <div class="form-group">
+              <label for="user-name" class="form-label">Seu Nome Completo</label>
+              <input type="text" id="user-name" class="form-input" placeholder="Ex: Maria Silva" required>
+            </div>
+
+            <div class="form-group">
+              <label for="user-email" class="form-label">Endereço de E-mail</label>
+              <input type="email" id="user-email" class="form-input" placeholder="seuemail@exemplo.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="user-interest" class="form-label">Área de Maior Interesse</label>
+              <select id="user-interest" class="form-select">
+                <option value="geral">Interesse Geral no Ecossistema</option>
+                <option value="biblia">Aplicação A Bíblia e Estudos Bíblicos</option>
+                <option value="acervo">Acervo Digital e Clássicos</option>
+                <option value="pesquisa">Pesquisa Acadêmica e Manuscritos</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer;">
+              <span>Confirmar Inscrição no Círculo</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+
+            <!-- Região viva ARIA para avisos do leitor de tela -->
+            <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       MODAL INSTITUCIONAL
+       ========================================================================= -->
+  <div id="institutional-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title">
+    <div class="modal-container">
+      <button class="modal-close-btn" data-close-modal aria-label="Fechar janela modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <h3 id="modal-title" class="modal-title">Sobre o Ecossistema O Livro</h3>
+      <div class="modal-body">
+        <p>O Livro (<strong>olivro.shop</strong>) é o portal institucional dedicado à disseminação de conhecimento sério, edificante e acessível.</p>
+        <p>A aplicação A Bíblia opera de maneira independente dentro do endereço <strong>/biblia/</strong>, permitindo que a experiência de leitura sagrada permaneça focada e livre de ruídos institucionais.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       RODAPÉ INSTITUCIONAL
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-grid">
+        
+        <div class="footer-brand">
+          <a href="#" class="brand-logo">
+            <svg class="brand-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 4L4 8V24L16 28L28 24V8L16 4Z"/>
+              <path d="M16 4V28"/>
+            </svg>
+            <span class="brand-text">O Livro</span>
+          </a>
+          <p class="footer-brand-desc">
+            Portal institucional e ecossistema de conhecimento. Preservação textual, estudos acadêmicos e leitura reflexiva.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Ecossistema</h4>
+          <ul class="footer-links-list">
+            <li><a href="#hero" class="footer-link">Sobre o Projeto</a></li>
+            <li><a href="#sobre" class="footer-link">Iniciativas</a></li>
+            <li><a href="https://bibliacrista.ai.studio" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Acessar a aplicação A Bíblia (abre em nova aba)">A Aplicação A Bíblia</a></li>
+            <li><a href="#pesquisa" class="footer-link">Acervo Digital</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Institucional</h4>
+          <ul class="footer-links-list">
+            <li><a href="#manifesto" class="footer-link">Manifesto</a></li>
+            <li><a href="#contato" class="footer-link">Círculo de Leitura</a></li>
+            <li><a href="#" data-open-modal data-modal-title="Diretrizes de Acessibilidade" data-modal-content="<p>O Livro adota as diretrizes WCAG 2.1 nível AA em todas as suas páginas e ferramentas. Nosso compromisso é garantir navegação por teclado, alto contraste e acessibilidade completa a todos os leitores.</p>" class="footer-link">Acessibilidade</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Domínio Oficial</h4>
+          <ul class="footer-links-list">
+            <li><span class="footer-domain-badge">olivro.shop</span></li>
+            <li><a href="https://bibliacrista.ai.studio" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Acessar a aplicação A Bíblia (abre em nova aba)">A Bíblia</a></li>
+            <li><a href="mailto:contato@olivro.shop" class="footer-link">contato@olivro.shop</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 O Livro (olivro.shop). Todos os direitos reservados.</p>
+        <p class="footer-disclaimer">
+          <strong>Aviso Institucional:</strong> Esta é a landing page oficial do domínio <strong>olivro.shop</strong>. A aplicação A Bíblia é uma ferramenta autônoma acessível em <code>https://bibliacrista.ai.studio</code>.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Script JS ES6+ em Módulo -->
+  <script type="module" src="/src/js/main.js"></script>
+
+</body>
+</html>

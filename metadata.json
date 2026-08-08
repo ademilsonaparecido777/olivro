@@ -1,0 +1,6 @@
+{
+  "name": "O Livro",
+  "description": "Página institucional de entrada para o ecossistema O Livro (olivro.shop)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
