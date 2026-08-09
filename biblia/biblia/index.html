@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bíblia Sagrada - Leitor Offline</title>
+  <meta name="description" content="Aplicativo offline para leitura e estudo da Bíblia Sagrada." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <!-- Cabeçalho Principal (App Header) -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="app-brand" data-action="go-home">
+        <div class="app-logo-icon">📖</div>
+        <h1 class="app-title">BÍBLIA SAGRADA</h1>
+      </div>
+
+      <div class="header-actions">
+        <button id="btn-search" class="icon-btn" title="Pesquisar versículos">🔍</button>
+        <button id="btn-favorites" class="icon-btn" title="Favoritos">★</button>
+        <button id="btn-history" class="icon-btn" title="Histórico de leitura">🕒</button>
+        <button id="btn-theme-toggle" class="icon-btn" title="Alternar Tema Claro/Escuro">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Barra de Navegação Breadcrumb -->
+  <nav class="breadcrumb-bar" id="breadcrumb-bar">
+    <!-- Renderizado dinamicamente via JS -->
+  </nav>
+
+  <!-- Área Principal de Conteúdo (Main Area) -->
+  <main class="app-main">
+
+    <!-- 1. Tela Inicial (Home View) -->
+    <section id="view-home" class="active-view">
+      <div class="hero-section">
+        <div class="hero-lamp-wrapper">
+          <!-- Lâmpada moderna virada de cima para baixo -->
+          <div class="hero-lamp-fixture">
+            <svg width="68" height="76" viewBox="0 0 68 76" fill="none" xmlns="http://www.w3.org/2000/svg" class="modern-lamp-svg">
+              <!-- Cordoaria / Fio pendurado do topo -->
+              <line x1="34" y1="0" x2="34" y2="22" stroke="var(--accent-color)" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- Soquete / Suporte da lâmpada moderna -->
+              <rect x="26" y="21" width="16" height="7" rx="2" fill="var(--accent-color)"/>
+              <!-- Cúpula / Luminária moderna virada para baixo -->
+              <path d="M 16 28 C 16 28, 12 40, 18 45 L 50 45 C 56 40, 52 28, 52 28 Z" fill="var(--accent-color)"/>
+              <!-- Lâmpada de vidro com brilho intenso direcionada para baixo -->
+              <path d="M 22 45 C 22 45, 18 58, 26 66 C 30 70, 38 70, 42 66 C 50 58, 46 45, 46 45 Z" fill="url(#lamp-light-glow)" filter="url(#glow-filter)"/>
+              <!-- Filamento brilhante interno -->
+              <path d="M 30 54 Q 34 48 38 54" stroke="#FFF7ED" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              
+              <defs>
+                <radialGradient id="lamp-light-glow" cx="50%" cy="35%" r="65%">
+                  <stop offset="0%" stop-color="#FFFFFF" />
+                  <stop offset="35%" stop-color="#FEF08A" />
+                  <stop offset="75%" stop-color="#F59E0B" />
+                  <stop offset="100%" stop-color="#D97706" />
+                </radialGradient>
+                <filter id="glow-filter" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="2" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+              </defs>
+            </svg>
+          </div>
+
+          <!-- Cone de luz projetado para baixo sobre as palavras BÍBLIA SAGRADA -->
+          <div class="light-beam-cone"></div>
+        </div>
+        <h2 class="hero-title">BÍBLIA SAGRADA</h2>
+        <p class="hero-subtitle">Leitura e Estudo</p>
+        
+        <div style="display: flex; flex-direction: column; gap: 16px; align-items: center;">
+          <button id="btn-antigo-testamento" class="btn-primary-large">
+            <span>📖 Antigo Testamento</span>
+            <span class="btn-arrow">&rarr;</span>
+          </button>
+          
+          <button id="btn-novo-testamento" class="btn-primary-large">
+            <span>📖 Novo Testamento</span>
+            <span class="btn-arrow">&rarr;</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Atalhos por Categorias da Bíblia (Colapsável) -->
+      <div class="category-shortcuts-card">
+        <details class="category-shortcuts-details">
+          <summary class="category-shortcuts-summary">
+            <div class="shortcuts-summary-header">
+              <h3 class="category-shortcuts-title">⚡ Atalhos por Divisões da Bíblia</h3>
+              <p class="category-shortcuts-subtitle">Acesse rapidamente as seções literárias das Escrituras Sagradas.</p>
+            </div>
+            <span class="shortcuts-arrow">▼</span>
+          </summary>
+          
+          <div class="shortcuts-content">
+            <div class="shortcuts-columns">
+              <!-- Antigo Testamento -->
+              <div class="shortcuts-column-group">
+                <h4 class="testament-group-title antigo-title">📜 Antigo Testamento</h4>
+                <div class="shortcut-buttons-grid">
+                  <button class="btn-category-shortcut" data-testament="antigo" data-group="Pentateuco" title="Ver Gênesis a Deuteronômio">
+                    <span class="shortcut-icon">🌱</span>
+                    <span class="shortcut-name">Pentateuco</span>
+                  </button>
+                  <button class="btn-category-shortcut" data-testament="antigo" data-group="Histórico" title="Ver Josué a Ester">
+                    <span class="shortcut-icon">🛡️</span>
+                    <span class="shortcut-name">Histórico</span>
+                  </button>
+                  <button class="btn-category-shortcut" data-testament="antigo" data-group="Poético" title="Ver Jó a Cânticos">
+                    <span class="shortcut-icon">✍️</span>
+                    <span class="shortcut-name">Poético</span>
+                  </button>
+                  <button class="btn-category-shortcut" data-testament="antigo" data-group="Profetas Maiores" title="Ver Isaías a Daniel">
+                    <span class="shortcut-icon">🔥</span>
+                    <span class="shortcut-name">Profetas Maiores</span>
+                  </button>
+                  <button class="btn-category-shortcut" data-testament="antigo" data-group="Profetas Menores" title="Ver Oséias a Malaquias">
+                    <span class="shortcut-icon">🎺</span>
+                    <span class="shortcut-name">Profetas Menores</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Novo Testamento -->
+              <div class="shortcuts-column-group">
+                <h4 class="testament-group-title novo-title">✝️ Novo Testamento</h4>
+                <div class="shortcut-buttons-grid">
+                  <button class="btn-category-shortcut" data-testament="novo" data-group="Evangelhos" title="Ver Mateus a João">
+                    <span class="shortcut-icon">🕊️</span>
+                    <span class="shortcut-name">Evangelhos</span>
+                  </button>
+                  <button class="btn-category-shortcut" data-testament="novo" data-group="Histórico" title="Ver Atos dos Apóstolos">
+                    <span class="shortcut-icon">⛪</span>
+                    <span class="shortcut-name">Histórico</span>
+                  </button>
+                  <button class="btn-category-shortcut" data-testament="novo" data-group="Cartas Paulinas" title="Ver Romanos a Filemom">
+                    <span class="shortcut-icon">✉️</span>
+                    <span class="shortcut-name">Cartas Paulinas</span>
+                  </button>
+                  <button class="btn-category-shortcut" data-testament="novo" data-group="Cartas Gerais" title="Ver Hebreus a Judas">
+                    <span class="shortcut-icon">🌍</span>
+                    <span class="shortcut-name">Cartas Gerais</span>
+                  </button>
+                  <button class="btn-category-shortcut" data-testament="novo" data-group="Profecia" title="Ver Apocalipse">
+                    <span class="shortcut-icon">👑</span>
+                    <span class="shortcut-name">Profecia</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Sistema de Planos de Leitura (Carregado dinamicamente via JS) -->
+      <div id="reading-plans-section" class="reading-plans-container"></div>
+
+      <!-- Widgets da Tela Inicial (Continuar Leitura & Recentes) -->
+      <div class="home-widgets-grid">
+        <div class="widget-card">
+          <h3 class="widget-title">📖 Leitura Recente</h3>
+          <div id="home-last-read">
+            <p class="text-muted">Nenhum capítulo lido recentemente.</p>
+          </div>
+        </div>
+
+        <div class="widget-card">
+          <h3 class="widget-title">📖 O LIVRO</h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 12px;">
+            Acesse o site principal de O Livro para continuar seus estudos bíblicos, anotações e reflexões completas.
+          </p>
+          <a href="https://olivro.shop" class="btn-text-action" style="display: inline-block; text-decoration: none; padding: 8px 14px; border-radius: 6px; font-weight: 600;">
+            🏠 Voltar para Casa →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Tela Lista dos Livros (Books View) -->
+    <section id="view-books" class="hidden">
+      <div class="section-header">
+        <h2 id="books-section-title" class="section-title">Novo Testamento</h2>
+        
+        <div class="filter-bar">
+          <div id="category-pills-container" class="category-pills">
+            <!-- Renderizado dinamicamente via JS -->
+          </div>
+
+          <input type="text" id="search-books-input" class="search-box-input" placeholder="Filtrar livro..." />
+        </div>
+      </div>
+
+      <!-- Grid dos 27 Livros -->
+      <div id="books-grid" class="books-grid">
+        <!-- Renderizado dinamicamente via JS -->
+      </div>
+    </section>
+
+    <!-- 3. Tela Lista de Capítulos (Chapters View) -->
+    <section id="view-chapters" class="hidden">
+      <div class="book-chapter-header">
+        <h2 id="chapter-select-book-title" class="section-title">Nome do Livro</h2>
+        <p id="chapter-select-book-info" class="hero-subtitle" style="margin-bottom: 0;">Selecione o capítulo desejado:</p>
+      </div>
+
+      <!-- Grid de Capítulos (1, 2, 3... N) -->
+      <div id="chapters-grid" class="chapters-grid">
+        <!-- Renderizado dinamicamente via JS -->
+      </div>
+    </section>
+
+    <!-- 4. Tela Leitor de Versículos (Reader View) -->
+    <section id="view-reader" class="hidden">
+      <!-- Indicador Visual de Progresso de Leitura -->
+      <div id="reading-progress-wrapper" class="reading-progress-wrapper">
+        <div class="reading-progress-info">
+          <span id="reading-progress-book-name" class="reading-progress-book-name">Progresso no Livro</span>
+          <span id="reading-progress-percentage" class="reading-progress-percentage">0%</span>
+        </div>
+        <div class="reading-progress-bar-container">
+          <div id="reading-progress-fill" class="reading-progress-fill" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <div class="reader-toolbar">
+        <div class="reader-title-group">
+          <h2 id="reader-chapter-title">Livro Capítulo</h2>
+        </div>
+
+        <div class="toolbar-controls">
+          <button id="btn-prev-chapter" class="btn-text-action btn-prev-chapter" title="Capítulo Anterior">&larr; Anterior</button>
+          <button id="btn-next-chapter" class="btn-text-action btn-next-chapter" title="Próximo Capítulo">Próximo &rarr;</button>
+          
+          <span style="color: var(--border-color);">|</span>
+          
+          <button id="btn-font-decrease" class="btn-text-action" title="Diminuir Fonte">A-</button>
+          <button id="btn-font-increase" class="btn-text-action" title="Aumentar Fonte">A+</button>
+          
+          <span style="color: var(--border-color);">|</span>
+
+          <button id="btn-play-audio" class="btn-text-action" title="Ouvir Capítulo">🔊 Ouvir Cap.</button>
+        </div>
+      </div>
+
+      <!-- Container dos Versículos -->
+      <div id="verses-container" class="verses-container">
+        <!-- Renderizado dinamicamente a partir dos arquivos JSON -->
+      </div>
+
+      <!-- Navegação de Capítulo Inferior -->
+      <div class="reader-bottom-navigation">
+        <button id="btn-prev-chapter-bottom" class="btn-text-action btn-prev-chapter" title="Capítulo Anterior">&larr; Anterior</button>
+        <button id="btn-next-chapter-bottom" class="btn-text-action btn-next-chapter" title="Próximo Capítulo">Próximo &rarr;</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Player de Áudio Flutuante (Text-to-Speech) -->
+  <div id="audio-bar" class="audio-floating-bar hidden">
+    <span>🔊 Áudio Bíblia</span>
+    <button id="btn-audio-pause" class="btn-text-action">Pausar</button>
+    <button id="btn-audio-resume" class="btn-text-action">Retomar</button>
+    <button id="btn-audio-stop" class="btn-text-action">Parar</button>
+  </div>
+
+  <!-- Modal Ações do Versículo Selecionado -->
+  <div id="modal-verse-actions" class="modal-overlay hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-verse-title" class="modal-title">Versículo</h3>
+        <button class="icon-btn btn-close-modal">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <p id="modal-verse-body-text" style="font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 20px; font-style: italic;"></p>
+
+        <!-- Ações do Versículo -->
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <button id="btn-modal-favorite" class="btn-text-action" style="padding: 12px; text-align: left;">
+            ★ Adicionar aos Favoritos
+          </button>
+          
+          <button id="btn-modal-copy" class="btn-text-action" style="padding: 12px; text-align: left;">
+            📋 Copiar Versículo
+          </button>
+
+          <button id="btn-modal-share" class="btn-text-action" style="padding: 12px; text-align: left;">
+            📲 Compartilhar Versículo
+          </button>
+
+          <button id="btn-modal-ai-explain" class="btn-text-action" style="padding: 12px; text-align: left;">
+            🤖 IA: Explicar Versículo
+          </button>
+        </div>
+
+        <!-- Marcações de Cores -->
+        <div style="margin-top: 20px;">
+          <label style="font-weight: 600; font-size: 0.9rem;">Marcar com Cor:</label>
+          <div class="color-picker-group">
+            <button class="color-picker-btn yellow" data-color="highlight-yellow" title="Amarelo"></button>
+            <button class="color-picker-btn green" data-color="highlight-green" title="Verde"></button>
+            <button class="color-picker-btn blue" data-color="highlight-blue" title="Azul"></button>
+            <button class="color-picker-btn pink" data-color="highlight-pink" title="Rosa"></button>
+            <button class="color-picker-btn none" data-color="" title="Remover Cor">✕</button>
+          </div>
+        </div>
+
+        <!-- Campo de Anotações -->
+        <div style="margin-top: 16px;">
+          <label style="font-weight: 600; font-size: 0.9rem;">Anotação Pessoal:</label>
+          <textarea id="verse-note-textarea" rows="3" style="width: 100%; margin-top: 6px; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary);" placeholder="Escreva sua reflexão ou nota de estudo..."></textarea>
+          <button id="btn-modal-save-note" class="btn-text-action" style="margin-top: 8px; width: 100%;">Salvar Anotação</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Pesquisa de Versículos -->
+  <div id="modal-search" class="modal-overlay hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Pesquisar na Bíblia</h3>
+        <button class="icon-btn btn-close-modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <input type="text" id="search-input-modal" class="search-box-input" style="max-width: 100%; margin-bottom: 16px;" placeholder="Digite palavra ou frase..." />
+        <div id="search-results-list" style="max-height: 300px; overflow-y: auto;">
+          <p class="empty-msg">Digite pelo menos 2 caracteres para pesquisar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Favoritos -->
+  <div id="modal-favorites" class="modal-overlay hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Meus Versículos Favoritos</h3>
+        <button class="icon-btn btn-close-modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div id="favorites-list" style="max-height: 350px; overflow-y: auto;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Histórico de Leitura -->
+  <div id="modal-history" class="modal-overlay hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Histórico de Leitura</h3>
+        <button class="icon-btn btn-close-modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div id="history-list" style="max-height: 300px; overflow-y: auto;"></div>
+        <button id="btn-clear-history" class="btn-text-action" style="margin-top: 16px; width: 100%; color: #ef4444;">Limpar Histórico</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal IA Assistente de Estudos -->
+  <div id="modal-ai" class="modal-overlay hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">🤖 IA Estudo Bíblico</h3>
+        <button class="icon-btn btn-close-modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div id="ai-explanation-content" style="line-height: 1.7; font-size: 0.95rem;">
+          <div class="spinner"></div>
+          Analisando passagem com inteligência artificial...
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Rodapé do Aplicativo -->
+  <footer class="app-footer">
+    <p>BÍBLIA SAGRADA</p>
+  </footer>
+
+  <!-- Carregamento do Script Principal (Vanilla JS ES Module) -->
+  <script type="module" src="./script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "Bíblia Sagrada - 66 Livros",
+  "description": "Aplicativo offline para leitura da Bíblia Sagrada com Validador JSON dos 66 Livros.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
