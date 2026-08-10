@@ -13,7 +13,7 @@ export default defineConfig(() => {
         name: 'copy-biblia',
         apply: 'build',
         closeBundle() {
-          const source = path.resolve(__dirname, 'biblia');
+          const source = path.resolve(__dirname, 'biblia/biblia');
           const destination = path.resolve(__dirname, 'dist/biblia');
 
           if (existsSync(source)) {
