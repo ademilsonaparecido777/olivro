@@ -16,8 +16,21 @@ export default defineConfig(() => {
           const source = path.resolve(__dirname, 'biblia/biblia');
           const destination = path.resolve(__dirname, 'dist/biblia');
 
+          const dataSource = path.resolve(
+            __dirname,
+            'biblia/public/biblia/data'
+          );
+          const dataDestination = path.resolve(
+            __dirname,
+            'dist/biblia/data'
+          );
+
           if (existsSync(source)) {
             cpSync(source, destination, { recursive: true });
+          }
+
+          if (existsSync(dataSource)) {
+            cpSync(dataSource, dataDestination, { recursive: true });
           }
         },
       },
@@ -35,3 +48,6 @@ export default defineConfig(() => {
     },
   };
 });
+if (existsSync(dataSource)) {
+  cpSync(dataSource, dataDestination, { recursive: true });
+}
