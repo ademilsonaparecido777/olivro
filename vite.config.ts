@@ -48,6 +48,3 @@ export default defineConfig(() => {
     },
   };
 });
-if (existsSync(dataSource)) {
-  cpSync(dataSource, dataDestination, { recursive: true });
-}
