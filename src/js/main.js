@@ -15,13 +15,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (mobileToggleBtn && mainNav) {
     function toggleMenu(show) {
-      const isExpanded = show !== undefined ? show : mobileToggleBtn.getAttribute('aria-expanded') !== 'true';
+      const isExpanded = show !== undefined
+        ? show
+        : mobileToggleBtn.getAttribute('aria-expanded') !== 'true';
+
       mobileToggleBtn.setAttribute('aria-expanded', isExpanded);
       mainNav.classList.toggle('active', isExpanded);
       document.body.style.overflow = isExpanded ? 'hidden' : '';
 
       const menuIcon = mobileToggleBtn.querySelector('.menu-icon');
       const closeIcon = mobileToggleBtn.querySelector('.close-icon');
+
       if (menuIcon && closeIcon) {
         menuIcon.style.display = isExpanded ? 'none' : 'block';
         closeIcon.style.display = isExpanded ? 'block' : 'none';
@@ -39,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Fechar menu no Tecla Escape
+    // Fechar menu com a tecla Escape
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && mainNav.classList.contains('active')) {
         toggleMenu(false);
@@ -70,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Filtrar cartões
       catalogCards.forEach(card => {
         const cardCategory = card.getAttribute('data-category');
+
         if (category === 'all' || cardCategory === category) {
           card.removeAttribute('hidden');
         } else {
@@ -89,16 +94,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function openModal(title, bodyText) {
     if (!modalOverlay) return;
+
     previouslyFocusedElement = document.activeElement;
 
     if (title) {
       const modalTitleEl = modalOverlay.querySelector('.modal-title');
-      if (modalTitleEl) modalTitleEl.textContent = title;
+
+      if (modalTitleEl) {
+        modalTitleEl.textContent = title;
+      }
     }
 
     if (bodyText) {
       const modalBodyEl = modalOverlay.querySelector('.modal-body');
-      if (modalBodyEl) modalBodyEl.innerHTML = bodyText;
+
+      if (modalBodyEl) {
+        modalBodyEl.innerHTML = bodyText;
+      }
     }
 
     modalOverlay.classList.add('active');
@@ -107,11 +119,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Focar no botão de fechar para acessibilidade
     const closeBtn = modalOverlay.querySelector('.modal-close-btn');
-    if (closeBtn) closeBtn.focus();
+
+    if (closeBtn) {
+      closeBtn.focus();
+    }
   }
 
   function closeModal() {
     if (!modalOverlay) return;
+
     modalOverlay.classList.remove('active');
     modalOverlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
@@ -124,8 +140,10 @@ document.addEventListener('DOMContentLoaded', () => {
   modalOpenBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
+
       const customTitle = btn.getAttribute('data-modal-title');
       const customContent = btn.getAttribute('data-modal-content');
+
       openModal(customTitle, customContent);
     });
   });
@@ -136,69 +154,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (modalOverlay) {
     modalOverlay.addEventListener('click', (e) => {
-      if (e.target === modalOverlay) closeModal();
+      if (e.target === modalOverlay) {
+        closeModal();
+      }
     });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+      if (
+        e.key === 'Escape' &&
+        modalOverlay.classList.contains('active')
+      ) {
         closeModal();
       }
     });
   }
 
   // ------------------------------------------------------------------------
-  // 4. FORMULÁRIO DE BOAS-VINDAS / NEWSLETTER
-  // ------------------------------------------------------------------------
-  const contactForm = document.getElementById('newsletter-form');
-  const formFeedback = document.getElementById('form-feedback');
-
-  if (contactForm && formFeedback) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const nameInput = document.getElementById('user-name');
-      const emailInput = document.getElementById('user-email');
-      const interestSelect = document.getElementById('user-interest');
-
-      if (!emailInput || !emailInput.value.includes('@')) {
-        showFeedback('Por favor, informe um endereço de e-mail válido.', 'error');
-        if (emailInput) emailInput.focus();
-        return;
-      }
-
-      if (!nameInput || nameInput.value.trim().length < 2) {
-        showFeedback('Por favor, informe seu nome completo.', 'error');
-        if (nameInput) nameInput.focus();
-        return;
-      }
-
-      // Sucesso
-      const interestText = interestSelect ? interestSelect.options[interestSelect.selectedIndex].text : 'geral';
-      showFeedback(
-        `Obrigado, ${nameInput.value.trim()}! Sua inscrição no Círculo de Leitura O Livro (${interestText}) foi confirmada com sucesso.`,
-        'success'
-      );
-
-      contactForm.reset();
-    });
-
-    function showFeedback(message, type) {
-      formFeedback.textContent = message;
-      formFeedback.className = `form-feedback ${type}`;
-    }
-  }
-
-  // ------------------------------------------------------------------------
-  // 5. DETECÇÃO DE ROLAGEM (EFEITO SOMBRA HEADER)
+  // 4. DETECÇÃO DE ROLAGEM (EFEITO SOMBRA HEADER)
   // ------------------------------------------------------------------------
   const header = document.getElementById('header');
+
   if (header) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
-        header.style.boxShadow = '0 4px 20px rgba(15, 39, 68, 0.08)';
-      } else {
-        header.style.boxShadow = 'none';
-      }
-    }, { passive: true });
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (window.scrollY > 20) {
+          header.style.boxShadow =
+            '0 4px 20px rgba(15, 39, 68, 0.08)';
+        } else {
+          header.style.boxShadow = 'none';
+        }
+      },
+      { passive: true }
+    );
   }
 });
